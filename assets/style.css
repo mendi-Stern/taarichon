@@ -1,0 +1,134 @@
+:root {
+  --ink: #1d2340;
+  --muted: #5d6280;
+  --paper: #fbf8f1;
+  --card: #ffffff;
+  --line: #e7e0cf;
+  --brand: #1f2a5a;
+  --gold: #b9852a;
+  --gold-soft: #f6ecd6;
+  --ok: #2f6b4f;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.7 "Segoe UI", "Noto Sans Hebrew", "Arial Hebrew", Arial, sans-serif;
+}
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--gold); }
+main { max-width: 820px; margin: 0 auto; padding: 8px 16px 48px; }
+
+.top {
+  background: var(--brand); color: #fff; padding: 12px 16px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; justify-content: space-between;
+}
+.brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
+.brand:hover { color: #fff; }
+.mark {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
+  background: var(--gold); color: var(--brand); font-weight: 800;
+}
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .95rem; }
+.top nav a { color: #e8eaf6; text-decoration: none; }
+.top nav a:hover { color: #fff; text-decoration: underline; }
+.crumbs { max-width: 820px; margin: 12px auto 0; padding: 0 16px; font-size: .88rem; color: var(--muted); }
+.crumbs a { color: var(--muted); }
+
+h1 { font-size: 2rem; line-height: 1.25; margin: 24px 0 12px; }
+h2 { font-size: 1.35rem; margin: 36px 0 10px; }
+h3 { font-size: 1.1rem; margin: 22px 0 6px; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+
+.answer {
+  background: var(--card); border: 2px solid var(--gold); border-radius: var(--radius);
+  padding: 16px 18px; font-size: 1.2rem; font-weight: 600;
+}
+.note { background: var(--gold-soft); border-radius: 10px; padding: 10px 14px; }
+.countdown:empty { display: none; }
+.countdown { font-weight: 700; color: var(--ok); }
+
+table { border-collapse: collapse; width: 100%; background: var(--card); border-radius: var(--radius); overflow: hidden; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: right; vertical-align: top; }
+thead th { background: #f1ecdf; font-size: .92rem; }
+tr.current td { background: var(--gold-soft); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+.calendar td small { display: block; color: var(--muted); font-size: .8rem; }
+.calendar th[scope="row"] { white-space: nowrap; }
+
+.faq dt { font-weight: 700; margin-top: 14px; }
+.faq dd { margin: 4px 0 0; }
+
+.hero { text-align: center; padding: 28px 16px 8px; }
+.hero .kicker { margin: 0; color: var(--gold); font-weight: 700; letter-spacing: .02em; }
+.hero h1 { font-size: 2.6rem; margin: 6px 0; }
+.hero .sub { font-size: 1.15rem; margin: 0; }
+.hero .hint { color: var(--muted); font-size: .9rem; }
+
+.upcoming, .cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.cards { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.upcoming a, .cards a {
+  display: grid; gap: 2px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 16px; text-decoration: none; color: var(--ink);
+}
+.upcoming a { grid-template-columns: 1fr auto; }
+.upcoming small { grid-column: 1 / -1; color: var(--muted); }
+.upcoming a:hover, .cards a:hover { border-color: var(--gold); }
+.cards span { color: var(--muted); font-size: .92rem; }
+.more { margin-top: 12px; }
+
+.tool {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; margin: 18px 0;
+}
+.tool label { display: block; font-weight: 600; margin: 10px 0 4px; }
+.tool input[type="date"], .tool input[type="number"], .tool select, .tool textarea {
+  font: inherit; padding: 9px 12px; border: 1px solid #cfc6b0; border-radius: 10px; background: #fff;
+  width: 100%; max-width: 320px;
+}
+.tool textarea { max-width: 100%; min-height: 90px; }
+.tool .row { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin-top: 10px; }
+.tool .row label { display: inline-flex; gap: 6px; align-items: center; margin: 0; font-weight: 500; }
+.tool .inline { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool .inline select, .tool .inline input { width: auto; }
+.result { margin-top: 16px; }
+.result:empty { display: none; }
+.result .big { font-size: 1.45rem; font-weight: 700; margin: 4px 0; }
+.result .label { color: var(--muted); font-size: .92rem; margin: 12px 0 0; }
+.result ul { padding-inline-start: 20px; }
+.values { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.values div { background: var(--paper); border-radius: 10px; padding: 10px 12px; }
+.values b { display: block; font-size: 1.6rem; }
+fieldset { border: 0; padding: 0; margin: 18px 0 0; }
+legend { font-weight: 700; font-size: 1.1rem; }
+
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; padding: 18px 16px 30px; max-width: 820px; margin: 0 auto; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 1.6rem; }
+  .hero h1 { font-size: 2rem; }
+  body { font-size: 16px; }
+}
+
+.cta { background: var(--gold-soft); border: 2px solid var(--gold); border-radius: var(--radius); padding: 6px 20px 14px; margin: 24px 0; }
+.cta h2 { margin-top: 12px; }
+.button { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 10px; font-weight: 700; }
+.button:hover { color: #fff; background: #2b3a78; }
+
+.month-nav { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 18px 0 0; font-size: .95rem; }
+.month { scroll-margin-top: 12px; }
+.month h2 small { display: block; font-size: .9rem; font-weight: 400; color: var(--muted); margin-top: 2px; }
+.month-grid { table-layout: fixed; }
+.month-grid th, .month-grid td { padding: 6px 4px; text-align: center; border: 1px solid var(--line); }
+.month-grid td { height: 64px; }
+.month-grid td b { display: block; font-size: 1.05rem; }
+.month-grid td small { display: block; color: var(--muted); font-size: .76rem; }
+.month-grid td a, .month-grid td span { display: block; font-size: .74rem; line-height: 1.2; margin-top: 2px; }
+.month-grid td.sat { background: #f7f4ec; }
+.month-grid td.hol { background: var(--gold-soft); }
+@media (max-width: 520px) {
+  .month-grid th, .month-grid td { padding: 4px 1px; }
+  .month-grid td b { font-size: .95rem; }
+  .month-grid td a, .month-grid td span { font-size: .66rem; }
+}
